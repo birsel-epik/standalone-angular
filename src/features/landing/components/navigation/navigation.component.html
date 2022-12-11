@@ -1,0 +1,39 @@
+<div class="vstack vh-100 gap-2 overflow-hidden">
+  <div class="navbar-collapse">
+    <div class="d-flex flex-column align-items-stretch gap-3">
+      <a routerLink="/" class="btn btn-outline-primary text-start" aria-current="page">
+        <i class="bi bi-house"></i> Home
+      </a>
+      <a routerLink="/about" class="btn btn-outline-primary text-start">
+        <i class="bi bi-chat-left"></i> About
+      </a>
+      <a class="btn btn-outline-primary text-start" data-bs-toggle="collapse" (click)="collapseSubMenu()" role="button" aria-expanded="false" aria-controls="collapseMenu">
+        <i class="bi bi-kanban"></i> Projects
+
+        <div class="collapse" [class.collapse]="collapseMenu">
+          <div class="text-start gap-2">
+            <a routerLink="/display-photo" class="btn btn-link text-white">
+              Photos
+            </a>
+            <a routerLink="/equality" class="btn btn-link text-white">
+             Equality
+            </a>
+          </div>
+        </div>
+      </a>
+      <a routerLink="/contact" class="btn btn-outline-primary text-start">
+        <i class="bi bi-telephone"></i> Contact
+      </a>
+      <a routerLink="/admin" class="btn btn-outline-primary text-start">
+        <i class="bi bi-person"></i> Admin
+      </a>
+
+
+
+
+    </div>
+  </div>
+
+
+
+</div>

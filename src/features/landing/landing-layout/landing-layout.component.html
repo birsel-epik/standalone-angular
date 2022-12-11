@@ -1,0 +1,19 @@
+<div class="p-3 bg-light">
+  <button type="button" class="navbar-toggle" (click)="toggleNavbarCollapsing()">
+    <i class="bi bi-list"></i>
+  </button>
+</div>
+
+<div class="d-flex flex-row w-100 h-100 justify-content-between align-items-stretch">
+    <div class="d-flex w-100">
+        <div class="col-2 p-2 bg-light border" [class.collapse]="navbarCollapsed">
+          <app-navigation></app-navigation>
+        </div>
+
+        <div class="flex-fill col-10 p-4 overflow-auto">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+

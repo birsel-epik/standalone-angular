@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {ErrorComponent} from "./common/pages/error/error.component";
+import {ErrorComponent} from "../features/common/pages/error/error.component";
 
 @Component({
   selector: 'app-root',
