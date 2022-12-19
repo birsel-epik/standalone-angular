@@ -9,17 +9,22 @@
       </a>
       <a class="btn btn-outline-primary text-start" data-bs-toggle="collapse" (click)="collapseSubMenu()" role="button" aria-expanded="false" aria-controls="collapseMenu">
         <i class="bi bi-kanban"></i> Projects
-
-        <div class="collapse" [class.collapse]="collapseMenu">
-          <div class="text-start gap-2">
-            <a routerLink="/display-photo" class="btn btn-link text-white">
-              Photos
-            </a>
-            <a routerLink="/equality" class="btn btn-link text-white">
-             Equality
-            </a>
-          </div>
+      </a>
+      <div class="collapse" [class.collapse]="collapseMenu">
+        <div class="d-flex row gap-2 ms-2">
+          <a routerLink="/display-photo" class="btn btn-light text-black text-start">
+            <i class="bi bi-plus"></i> Photos
+          </a>
+          <a routerLink="/equality" class="btn btn-light text-black text-start">
+            <i class="bi bi-plus"></i> Equality
+          </a>
+          <a routerLink="/card" class="btn btn-light text-black text-start">
+            <i class="bi bi-plus"></i> Card
+          </a>
         </div>
+      </div>
+      <a routerLink="/jira" class="btn btn-outline-primary text-start">
+        <i class="bi bi-kanban"></i> Jira
       </a>
       <a routerLink="/contact" class="btn btn-outline-primary text-start">
         <i class="bi bi-telephone"></i> Contact

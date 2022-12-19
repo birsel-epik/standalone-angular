@@ -5,6 +5,8 @@ import {HomeComponent} from "./pages/home/home.component";
 import {LandingLayoutComponent} from "./landing-layout/landing-layout.component";
 import {DisplayPhotoComponent} from "../display-photo/display-photo.component";
 import {EqualityComponent} from "../equality/equality.component";
+import {CardComponent} from "../card/card.component";
+import {JiraComponent} from "../jira/jira.component";
 
 export const landingRoutes: Routes = [
   {
@@ -13,8 +15,10 @@ export const landingRoutes: Routes = [
       {path: '', pathMatch: 'full', component: HomeComponent},
       {path: 'about', component: AboutComponent},
       {path: 'contact', component: ContactComponent},
+      {path: 'jira', component: JiraComponent},
       {path: 'display-photo', component:DisplayPhotoComponent},
-      {path: 'equality', component:EqualityComponent}
+      {path: 'equality', component:EqualityComponent},
+      {path: 'card', component:CardComponent}
     ]
   }
 ]

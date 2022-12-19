@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import { EqualityValidators } from '../../app/class/equality-validators/equality-validators'
-import {delay, filter, scan} from "rxjs";
+import {delay, filter} from "rxjs";
 
 
 @Component({
@@ -43,19 +43,10 @@ export class EqualityComponent {
     this.mathForm.statusChanges.pipe(
       filter(value => value === 'VALID'),
       // Dönen değeri filtrelemiş oluyoruz. Doğru cevap verildi ise, değeri VALID olanları almış oluyoruz.
-      delay(800),
+      delay(800)).
       // belirli bir süre sonra değişiklik yapıyor
-      scan(
-        acc => {
-        return {
-          numberSolved: acc.numberSolved + 1,
-          starTime: acc.starTime
-        };
-      },
-        {numberSolved: 0 , starTime : new Date() })
-
-    ).subscribe(({numberSolved , starTime}) => {
-        // numberSolved ++; // arttırma işlemi
+      subscribe((value) => {
+        numberSolved ++;
         this.seconds = (new Date().getTime() - startTime.getTime()) / numberSolved / 1000;
         // son zaman ile başlangıç zamanını çıkartıp, geçen sürey buluyoruz. Doğru cevap verdiği ortalama süre
       //console.log(value);

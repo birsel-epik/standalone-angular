@@ -12,9 +12,9 @@ interface CallResponse {
 })
 export class PhotoService {
   //baseUrl = 'https://api.unsplash.com/';
-  constructor( private http:HttpClient ) { }
+  constructor( private httpClient:HttpClient ) { }
     getPhotos() {
-      return this.http.get<CallResponse>('https://api.unsplash.com/photos/random', {
+      return this.httpClient.get<CallResponse>('https://api.unsplash.com/photos/random', {
         headers: {
           Authorization: 'Client-ID c_EgsZeplJUTgYKpIGnycRgy1-g2Nd1heepRNiv9U-k'
         }

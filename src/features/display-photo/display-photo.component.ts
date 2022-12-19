@@ -13,7 +13,8 @@ import {PhotoService} from "../../app/service/photo.service";
 export class DisplayPhotoComponent implements OnInit {
   photoUrl: string = '';
 
-  constructor(private photoService : PhotoService) {
+  constructor(
+    private photoService : PhotoService) {
   }
 
   ngOnInit(): void {
