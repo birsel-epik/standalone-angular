@@ -1,0 +1,31 @@
+<ng-template #dangerTpl>
+  <i class="bi bi-x-octagon-fill"></i>
+  Board Silindi
+</ng-template>
+
+<div class="d-flex justify-content-center align-items-center my-4">
+  <button (click)="openCardDialog()" class="btn btn btn-primary">Yeni Kard Ekle</button>
+</div>
+
+
+<div class="card" style="width: 18rem;" *ngFor="let card of boardService.boards[boardIndex].cards; let i=index">
+  <div class="card-body">
+    <h5 class="card-title">{{card.title}}</h5>
+    <div class="card-text">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            test
+           <!-- *ngFor="let checkbox of cards.checklist; let ci=index;"
+            [(ngModel)]=card.status[ci]"  {{checkbox}}-->
+          </label>
+        </div>
+    </div>
+
+    <button (click)="deleteCard(i, dangerTpl)" class="btn btn-warning">Kartı Sil</button>
+    <button (click)="editCard(i,card)" class="btn btn-primary">Kartı Güncelle</button>
+  </div>
+</div>
+
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+

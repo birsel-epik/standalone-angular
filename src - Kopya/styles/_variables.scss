@@ -1,0 +1,55 @@
+@import "color-palette";
+
+
+$primary: #3575dd;
+$secondary: #57519f;
+$gray-theme: #757575;
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "gray": $gray-theme,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "indigo": $indigo,
+  "pink": $pink,
+  "red-mat": $red-400,
+  "green-mat": $green-400,
+  "blue-mat": $blue-400,
+  "cyan-mat": $cyan-400,
+  "teal-mat": $teal-400,
+  "indigo-mat": $indigo-400,
+  "pink-mat": $pink-400,
+  "purple-mat": $purple-400,
+  "orange-mat": $orange-400,
+  "yellow-mat": $yellow-400
+);
+
+$font-family-base: "Inter var", sans-serif;
+
+$min-contrast-ratio: 3;
+
+//$link-color: $primary;
+
+$link-decoration: none;
+
+$enable-caret: false;
+
+$placeholder-opacity-max: 0.3;
+$placeholder-opacity-min: 0.1;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+);

@@ -1,0 +1,39 @@
+<!-- 2. ÖRN COMPONENTE DATA GEÇME -->
+<div class="w-full flex-fill col-12 p-4 overflow-auto container">
+  <h4 class="col-md-12">Cards (@Input) </h4>
+  <div class="d-flex row">
+    <!-- cardStart -->
+    <div class="col-md-3" *ngFor="let post of posts">
+        <app-card-child
+          [titleChild]="post.title"
+          [imageUrlChild]="post.imageUrl"
+          [userNameChild]="post.userName"
+          [descriptionChild]="post.description">
+        </app-card-child>
+    </div>
+    <!-- cardEnd -->
+  </div>
+</div>
+
+<!-- 1. ÖRN DATABINDING
+<div class="container">
+  <h4 class="col-md-12">Cards</h4>
+  <div class="d-flex row">
+    &lt;!&ndash; cardStart &ndash;&gt;
+    <div class="col-md-3" *ngFor="let post of posts">
+      <div class="card m-2">
+        <img src="../../assets/images/{{post.imageUrl}}" class="card-img-top" alt="Bike">
+        <div class="card-body">
+          <h6>@{{post.userName}}</h6>
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.description}}</p>
+          <a href="" class="btn btn-primary">Detay</a>
+        </div>
+      </div>
+    </div>
+    &lt;!&ndash; cardEnd &ndash;&gt;
+  </div>
+</div>
+-->
+
+

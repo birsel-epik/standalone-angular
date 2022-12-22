@@ -1,0 +1,40 @@
+<!-- modalHeader -->
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Yeni Card</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<!-- !modalHeader -->
+
+<!-- modalContent -->
+<div class="modal-body">
+    <div class="col-md-12 mb-3">
+      <label class="form-label">Başlık</label>
+      <div class="input-group">
+        <span class="input-group-text rounded-0"><i class="bi bi-info-circle"></i></span>
+        <input [(ngModel)]="title" type="text" id="boardTitle" class="form-control" aria-describedby="inputGroupPrepend">
+      </div>
+    </div>
+
+    <div *ngFor="let task of tasksLoop; let i=index;">
+      <div class="col-md-12 mb-3">
+        <label class="form-label">Task {{i+1}}</label>
+        <div class="input-group">
+          <span class="input-group-text rounded-0"><i class="bi bi-info-circle"></i></span>
+          <input [(ngModel)]="tasks[i]" type="text" id="boardTask" class="form-control" aria-describedby="inputGroupPrepend">
+          <button (click)="deleteTask(i)" class="btn btn-primary"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+
+</div>
+<!-- !modalContent -->
+
+<!-- modalFooter -->
+<div class="modal-footer">
+  <button (click)="addTask()" type="button" class="btn btn-warning">Yeni Task Ekle</button>
+  <button (click)="createTask()" type="button" class="btn btn-primary">Ekle</button>
+  <button type="button" class="btn btn-light" (click)="close()">İptal</button>
+</div>
+<!-- !modalFooter -->
+
+
