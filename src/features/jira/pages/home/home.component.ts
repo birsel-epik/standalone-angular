@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {NgbActiveModal, NgbModal, NgbTooltipModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgForOf} from "@angular/common";
-import {BoardsModalComponent} from "../boards/boards-modal/boards-modal.component";
-import {BoardService} from "../../../../app/services/board.service";
 import {ToastsContainer} from "../toasts-container.components";
 import {ToastService} from "../../../../app/services/toast.service";
+import {BoardService} from "../../../../app/services/board.service";
+import {BoardsModalComponent} from "../boards/boards-modal/boards-modal.component";
 
 @Component({
   selector: 'app-home',
@@ -23,11 +23,11 @@ export class HomeJiraComponent {
               public boardService: BoardService) {  }
 
   openBoardDialog():void {
-    const result = this.modalService.open(BoardsModalComponent,{
+    const modalResult = this.modalService.open(BoardsModalComponent,{
       backdrop: "static",
       size: "sm",
       centered: true,
-      backdropClass: 'light-blue-backdrop'
+      //backdropClass: 'light-blue-backdrop'
     });
 
   }

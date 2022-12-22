@@ -1,6 +1,9 @@
 <!-- modalHeader -->
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Yeni Card</h4>
+  <h4 class="modal-title" id="modal-basic-title">
+    Kartı Güncelle
+    <!-- {{data.editMode ? 'Kartı Güncelle' : 'Yeni Kart'}} -->
+  </h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
 <!-- !modalHeader -->
@@ -32,9 +35,15 @@
 <!-- modalFooter -->
 <div class="modal-footer">
   <button (click)="addTask()" type="button" class="btn btn-warning">Yeni Task Ekle</button>
-  <button (click)="createTask()" type="button" class="btn btn-primary">Ekle</button>
   <button type="button" class="btn btn-light" (click)="close()">İptal</button>
+  <button (click)="createTask()" type="button" class="btn btn-primary">
+    <!-- {{data.editMode ? 'Güncelle' : 'Ekle'}}  -->
+    Ekle
+  </button>
 </div>
 <!-- !modalFooter -->
+
+
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
 
 
