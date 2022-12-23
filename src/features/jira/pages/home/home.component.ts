@@ -29,7 +29,6 @@ export class HomeJiraComponent {
       centered: true,
       //backdropClass: 'light-blue-backdrop'
     });
-
   }
 
   deleteBoard(index: number, dangerTpl:any){

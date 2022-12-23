@@ -15,7 +15,7 @@ import {BoardService} from "../../../../../app/services/board.service";
 })
 export class BoardViewModalComponent {
 
-  data: any;
+  data: any; // Sonra sil
   title : string = '';
   tasks : Array<string> = [''];
   // buraya tasklar eklenecek, 1 den fazla task olacakğı için (dizi) Array olarak tanımlıyoruz.
@@ -30,6 +30,7 @@ export class BoardViewModalComponent {
   }
   ngOnInit():void {
     //debugger;
+
 
     if (this.data.editMode) {
       this.title = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title;

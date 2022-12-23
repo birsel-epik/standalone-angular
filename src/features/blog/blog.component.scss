@@ -1,0 +1,16 @@
+.blog-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+.blog-body-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; // kaç satır gözükeceğini belirtiyoruz
+  -webkit-box-orient: vertical;
+}

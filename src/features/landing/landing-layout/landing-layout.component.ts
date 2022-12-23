@@ -12,7 +12,7 @@ import {RouterModule} from "@angular/router";
 })
 export class LandingLayoutComponent {
 
-  navbarCollapsed = true;
+  navbarCollapsed = false;
   toggleNavbarCollapsing() {
     this.navbarCollapsed = !this.navbarCollapsed;
   }
