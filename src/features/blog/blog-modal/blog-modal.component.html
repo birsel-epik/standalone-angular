@@ -1,7 +1,7 @@
 <!-- modalHeader -->
 <div class="modal-header">
   <h4 class="modal-title" id="modal-basic-title">
-    Başlık
+    {{isUpdate ? 'Yazıyı Güncelle' : 'Yazıyı Gör'}}
   </h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
@@ -9,8 +9,20 @@
 
 
 <!-- modalContent -->
-<div class="modal-body">
-  modalContent
+<div class="modal-body" *ngIf="!isUpdate"> <!-- isUpdate False olduğu durumda çalışacak / Görüntüle -->
+  <div class="row">
+    <div class="col-md-4">
+      <img src="assets/images/image{{imageUrl}}.jpg" alt="Blog" class="w-100 h-auto">
+    </div>
+    <div class="col-md-8">
+      {{title}}
+      <p>{{body}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-body" *ngIf="isUpdate"> <!-- isUpdate True olduğu durumda çalışacak / Düzenle -->
+  Düzenle
 </div>
 <!-- !modalContent -->
 
