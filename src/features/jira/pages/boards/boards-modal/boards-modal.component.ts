@@ -24,6 +24,7 @@ export class BoardsModalComponent {
 
   createBoard() {
     this.boardService.create(this.boardForm.get('title')?.value)
+
     this.toastService.show('Board eklendi!', { classname: 'bg-success text-light', delay: 1000 });
     this.activeModal.close();
   }

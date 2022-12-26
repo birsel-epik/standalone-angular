@@ -32,7 +32,7 @@ export class BoardViewModalComponent {
     //debugger;
 
 
-    if (this.data.editMode) {
+    if (this.data) {
       this.title = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title;
       this.tasksLoop = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status;
       this.tasks = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist;
@@ -58,7 +58,7 @@ export class BoardViewModalComponent {
       this.toastService.show('Yeni Task Giriniz!', { classname: 'bg-warning text-black', delay: 1000 });
     }
     else {
-      if(!this.data.editMode) { // editMode false ise kart ekleme işlemi yapılıyor
+      if(!this.data) { // editMode false ise kart ekleme işlemi yapılıyor
         //this.boardService.boards.push({
         this.boardService.boards[this.data.boardIndex].cards.push({
           title: this.title,

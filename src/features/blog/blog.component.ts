@@ -3,30 +3,29 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgForOf, SlicePipe} from "@angular/common";
 import {NgbActiveModal, NgbModal, NgbPagination} from "@ng-bootstrap/ng-bootstrap";
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
-import {BlogService} from "../../app/services/blog/blog.service";
 import {PostService} from "../../app/services/blog/post.service";
 import {BlogModalComponent} from "./blog-modal/blog-modal.component";
+import {BlogService} from "../../app/services/blog/blog.service";
 
 @Component({
   selector: 'app-blog',
   standalone: true,
   imports: [HttpClientModule, NgForOf, NgbPagination, SlicePipe],
-  providers:[BlogService, PostService, NgbActiveModal, NgbModal, BsModalRef, BsModalService],
+  providers:[PostService, NgbActiveModal, NgbModal, BsModalRef, BsModalService, BlogService],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit{
   modalRef: BsModalRef | undefined;
   blogData : Array<any> = []; // Servisten gelen cevabı bir değişkene atamak için değişken tanımlıyoruz (2)
+  data: any;
 
   pageSize = 8; // pagination için 8 li görünüm yapmak istiyoruz
   page = 13; // pagination için kaç sayfa olacağını belirtiyoruz
 
   constructor(
     private modalService: BsModalService,
-    private postService: PostService,
-
-    private blogService : BlogService
+    public postService: PostService
 
   ) {  }
 
@@ -37,6 +36,38 @@ export class BlogComponent implements OnInit{
     })
   }
 
+  openModal(element: any, viewOrupdate:any) {
+    this.postService.getPosts().subscribe((blogData: any[]) => {
+      this.data = blogData;
+      this.modalRef = this.modalService.show(BlogModalComponent, {
+        initialState: { blogData },
+        ignoreBackdropClick: true,
+        animated: true,
+        keyboard: true,
+        class: 'modal',
+      });
+      this.modalRef.content.event.subscribe((result: any) => {
+        debugger;
+        console.log('results', result);
+      });
+    });
+  }
+
+
+/*  openModal(element: any, viewOrupdate:any) {
+    const initialState = {
+      data: this.blogData,
+    };
+
+    this.modalRef = this.modalService.show(BlogModalComponent, { initialState });
+    debugger;
+    this.modalRef.content.onSelectedData.subscribe((result: any) => {
+      //debugger;
+      console.log('results', result);
+    });
+  }*/
+
+/*
   openModal(element: any, viewOrupdate:any) {
     const initialState = {
       data: this.blogData,
@@ -49,6 +80,7 @@ export class BlogComponent implements OnInit{
       console.log('results', result);
     });
   }
+*/
 
 
 /*  openModal(element: any, viewOrupdate:any) {

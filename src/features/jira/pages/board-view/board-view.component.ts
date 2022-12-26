@@ -63,6 +63,7 @@ export class BoardViewComponent {
         size: "sm",
         scrollable: true,
         centered: true,
+
         //data: {boardIndex: this.boardIndex, cardIndex:indexCard, editMode:true}
       });
   }

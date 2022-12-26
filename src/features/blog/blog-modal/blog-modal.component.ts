@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import {ToastsContainer} from "../../jira/pages/toasts-container.components";
 import {NgIf} from "@angular/common";
-import {PostService} from "../../../app/services/blog/post.service";
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {PostService} from "../../../app/services/blog/post.service";
 
 @Component({
   selector: 'app-blog-modal',
@@ -18,16 +18,16 @@ export class BlogModalComponent implements OnInit{
   imageUrl : string = "";
   title : string = "";
   body : string = "";
-  data: any[] = [];
 
-  onSelectedData: EventEmitter<any> = new EventEmitter<any>();
+  blogData: any;
+
 
   //@Input() dataForm: FormGroup;
 
   constructor(
+    public activeModal: NgbActiveModal,
     private modalService: BsModalService,
     public bsModalRef: BsModalRef,
-    public activeModal: NgbActiveModal,
     private postService: PostService
   ) {
     //debugger;
@@ -46,8 +46,8 @@ export class BlogModalComponent implements OnInit{
 
   ngOnInit():void {
     this.postService.getPosts().subscribe((res: any) => {
-      this.data.length = 0;
-      this.data.push(res[0]);
+      this.blogData.length = 0;
+      this.blogData.push(res[0]);
       // this.data = [res[0]];
     });
     //console.log(this.blogData)

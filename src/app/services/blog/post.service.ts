@@ -7,7 +7,7 @@ import {BlogService} from "./blog.service";
 export class PostService extends BlogService{
 
   constructor(
-    private blogService : BlogService
+    public blogService : BlogService
   ) {
     super(blogService.http);
   }
