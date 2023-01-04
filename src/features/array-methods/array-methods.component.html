@@ -1,0 +1,218 @@
+<div class="d-flex vstack container justify-content-center align-items-left p-4">
+
+  <h4 class="d-block">Dizi Metotları</h4>
+
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.push()</h6>
+    Push metodu var olan bir diziye yeni bir eleman eklememizi sağlıyor.
+    Eklemek istediğimiz elemanı parantez içine yazıyoruz.
+    <br>
+    <span class="fst-italic">Sonuç: {{pushMethod | json}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.pop()</h6>
+    Pop metodu var olan bir dizideki en son elemanı silmemizi sağlar.
+    Parantez içerisinde parametre almaz.
+    <br>
+      <span class="fst-italic">Sonuç: {{popMethod | json}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.includes()</h6>
+    Includes metodu bir elemanın dizi içerisinde bulunup bulunmadığını kontrol eder. <br>
+    Boolean (true/false) olarak çıktı alır.
+    <br>
+    <span class="fst-italic">Sonuç elma var mı? {{elmaVar}} <br>
+      Sonuç: armut var mı? {{armutVar}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.slice()</h6>
+    <ul>
+      <li>Slice (dilimleme) metodu bir dizinin bir kısmının kopyasıyla yeni bir dizi oluşturmamıza olanak sağlıyor.</li>
+      <li>Parantez içerisinde ise kopyalamak istediğimiz elemanların aralığını başlangıç ve bitiş indeksleri olacak şekilde iki parametre olarak giriyoruz. Bitiş indeksindeki değerin aralığa dahil olmadığını unutmayalım.</li>
+      <li>Bu metot uygulandığı dizinin orijinal halini değiştirmiyor bu yüzden yeni oluşacak diziyi farklı bir değişkende saklıyoruz.</li>
+    </ul>
+
+    <span class="fst-italic">Sonuç: {{yeniAlisverisListem | json}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.join()</h6>
+    <ul>
+      <li>Bazen Dizi içerisinde topladığınız verileri, string (sözdizimi) olarak yazdırmak isteyebilirsiniz. Join metodu bu konuda yardıma yetişiyor.</li>
+      <li>Parantez içerisine dizi elemanları arasına koymak istediğimiz string'i parametre olarak girebiliriz. Eğer bir parametre vermezsek virgül bastırır.</li>
+    </ul>
+
+    <span class="fst-italic">Sonuç 1: {{stringAlisverisListem}}</span> <br>
+    <span class="fst-italic">Sonuç 2: {{stringAlisverisListem2}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.concat()</h6>
+    Bu metot farklı dizileri birleştirip tek bir diziye çevirmemizi sağlıyor.
+    <br>
+    <span class="fst-italic">Sonuç: {{yiyecekler}} + {{icecekler}} = {{menu}} </span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-6 fw-bold">
+    Yazının devamında, içerisinde fonksiyon tanımladığımız ve bu fonksiyonlarla dizideki elemanları manipüle ettiğimiz dizi metotlarını inceleyeceğiz.
+  </div>
+
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.forEach()</h6>
+    İhtiyacımıza göre bu parametrelerden hepsini veya aralarından birkaçını kullanabiliriz.
+    <br>
+    <span class="fst-italic">dizi.forEach(function(diziElemanınınKendisi, diziElemanınınIndeksi, dizininKendisi) <br>
+        Bir şeyler yap
+    );</span>
+    <br>
+    <span class="fst-italic">Sonuç: ?</span>
+    <!-- <span class="fst-italic">Sonuç: {{malzemeler}} = {{malzeme}} / {{malzemeIndeksi}}</span> -->
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class=" fw-bold">.map()</h6>
+    Map metodu da forEach gibi kendisine verilen fonksiyonu dizinin her elemanı için uygular fakat forEach'ten farklı olarak sonucu yeni bir dizide tutar. Orijinal dizi olduğu gibi kalır.
+    <br>
+    <span class="fst-italic">Sonuç: {{sayilar}} / {{sayilarin5kati}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.some()</h6>
+    Some metodu belirli bir array içerisinde vereceğimiz koşula uyan eleman olup olmadığını kontrol eder.
+    Boolean (true/false) olarak çıktı alır. <br>
+    <span class="fst-italic">Sonuç: {{someSayilar}} -> {{sonucSome1}} / {{sonucSome2}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.every()</h6>
+    <ul>
+      <li>every metodu ile belirtilen bir koşulun dizideki tüm elemanlara uyup uymadığını kontrol ederiz.</li>
+      <li>some metodunda olduğu gibi, Boolean yani true veya false olarak döner.</li>
+      <li>True dönebilmesi için dizideki tüm elemanların fonksiyondaki koşula uyması gerekir.</li>
+    </ul>
+    <span class="fst-italic">Sonuç: {{everySayilar}} -> {{everySonuc1}}  / {{everySonuc2}} / {{everySonuc3}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.filter()</h6>
+    <ul>
+      <li>filter metodu bir dizi içerisindeki belirli bir koşulu sağlayan elemanlar ile bir dizi oluşturmamıza, dolayısısyla dizi elemanlarını filtrelememize yarıyor.</li>
+      <li>Yeni oluşacak diziyi bir değikende saklıyoruz.</li>
+      <li>Orijinal dizi bozulmuyor</li>
+    </ul>
+    <span class="fst-italic">Sonuç: Sayılar: {{filterSayilar}} --> Filtrelenmiş Sayılar: {{filtrelenmisSayilar}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-inline-block mb-6">
+    <h6 class="fw-bold">.find()</h6>
+    <ul>
+      <li>Bu metot belirtilen koşula uyum sağlayan dizi elemanını bulmamızı sağlar.</li>
+      <li>Diğer metotların aksine, find metodu elemanın kendisini döner.</li>
+      <li>Koşulu sağlayan birden fazla eleman varsa, bulduğu ilk elemanı döner.</li>
+      <li>Koşulu sağlayan bir eleman bulamazsa undefined döner.</li>
+    </ul>
+  </div>
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.sort()</h6>
+    <ul>
+      <li>Bu metot, dizi içerisindeki elemanları sıralamaya yarar.</li>
+      <li>Orijinal dizi sıralanmış şekilde döner. (Yani dizi mutate eder.)</li>
+      <li>Eğer parametre olarak bir fonksiyon verilmezse dizi elemanları string'e çevirilir ve UTF-16 değerlerine göre sıralanır.</li>
+      <li>Atan veya azalan olarak sıralamak için farklı bir yol izlenmelidir.</li>
+    </ul>
+    <span class="fst-italic">Varsayılan haliyle (parametre vermeden) sıralamak yapmak istediğimizde <br>
+      Sonuç 1: {{sortSayilar1}} (Sayıların string halleri UTF-16 değerlerine göre sıralandıkları için)<br>
+      Sonuç 2 : {{sortSayilar2}}
+    </span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">.reduce()</h6>
+    <ul>
+      <li>Bu metot dizimizi yalnızca bir değere indirger.</li>
+      <li>Parantez içerisine parametre olarak bir fonksiyon ve accumulator'ün (toparlayıcının) başlangıç değeri girilir.</li>
+      <li>Bu metot orijinal diziyi değiştirmez. (Mutate etmez).</li>
+    </ul>
+    <span class="fst-italic">Sonuç: {{reduceSayilar}} --> {{sonucReduce1}} / {{sonucReduce2}}</span>
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">Dizi İçerisinde Dizi Oluşturma</h6>
+    Piknik sepetimizde bulunan yiyeceklerin adlarını ve sayılarını tutan bir dizimiz olsun: <br>
+    Dizi: {{piknikSepetim}}
+    <br><br>
+
+    Burada piknik sepetindeki elemanlara ulaşmak istersek: <br>
+    ilkEleman: {{ilkEleman}} <br>
+    ikinciEleman: {{ikinciEleman}} <br>
+    ucuncuEleman: {{ucuncuEleman}}
+  </div>
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">Örnek - 1</h6>
+    dizi = [2,5,8,11,15,17]; <br>
+    Yukarıda verilen dizinin elemanları içinde 10'dan büyük olan elemanların 5'er katından oluşan yeni bir dizi oluşturun.
+
+    <span class="fst-italic">Sonuç: <br>
+      Örnek Sayılar: {{ornekSayilar1}} <br>
+      Filtre Sayılar: {{filterSayilarr}} <br>
+      Filtre Sayılar 5 Katı: {{filterSayilar5Kat}}
+    </span>
+  </div>
+
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">Örnek - 2</h6>
+    Sayılar: {{ornekSayilar2}}<br>
+    <span class="fst-italic">5'ten büyük eleman var: {{sonucOrnek2}}
+    </span>
+  </div>
+
+
+
+  <hr>
+  <div class="d-block mb-3">
+    <h6 class="fw-bold">Örnek - 3</h6>
+    Sayılar: {{ornekSayilar3}} <br>
+    <span class="fst-italic">
+      Dizinin elemanlarının çarpımının sonucunu: {{sonucOrnek3}}
+    </span>
+  </div>
+
+
+</div>

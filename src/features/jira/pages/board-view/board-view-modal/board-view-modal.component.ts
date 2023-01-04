@@ -32,7 +32,7 @@ export class BoardViewModalComponent {
     //debugger;
 
 
-    if (this.data) {
+    if (this.data.editMode) {
       this.title = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title;
       this.tasksLoop = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status;
       this.tasks = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist;
@@ -53,12 +53,13 @@ export class BoardViewModalComponent {
   createTask() {
     //debugger;
     if(this.tasks.some((element:string) => element === ""))
-      // Eğer boş olan eleman var ise Toast ile ekrana mesaj çıkartıyoruz. // some -> herhangi biri buna sahipse, yani tipi de dahil olmak üzere boş string e eşitse
+      // Eğer boş olan eleman var ise Toast ile ekrana mesaj çıkartıyoruz.
+      // some -> herhangi biri buna sahipse, yani tipi de dahil olmak üzere boş string e eşitse
     {
-      this.toastService.show('Yeni Task Giriniz!', { classname: 'bg-warning text-black', delay: 1000 });
+      this.toastService.show('Yeni Task Girin!', { classname: 'bg-warning text-black', delay: 1000 });
     }
     else {
-      if(!this.data) { // editMode false ise kart ekleme işlemi yapılıyor
+      if(!this.data.editMode) { // editMode false ise kart ekleme işlemi yapılıyor
         //this.boardService.boards.push({
         this.boardService.boards[this.data.boardIndex].cards.push({
           title: this.title,

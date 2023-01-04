@@ -8,6 +8,7 @@ import {EqualityComponent} from "../equality/equality.component";
 import {CardComponent} from "../card/card.component";
 import {JiraLayoutComponent} from "../jira/jira-layout/jira-layout.component";
 import {BlogComponent} from "../blog/blog.component";
+import {ArrayMethodsComponent} from "../array-methods/array-methods.component";
 
 export const landingRoutes: Routes = [
   {
@@ -18,6 +19,7 @@ export const landingRoutes: Routes = [
       {path: 'contact', component: ContactComponent},
       {path: 'display-photo', component:DisplayPhotoComponent},
       {path: 'equality', component:EqualityComponent},
+      {path: 'methods', component:ArrayMethodsComponent},
       {path: 'card', component:CardComponent},
       {path: 'jira', component:JiraLayoutComponent},
       {path: 'blog', component:BlogComponent}

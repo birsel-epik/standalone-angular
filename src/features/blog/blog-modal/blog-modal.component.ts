@@ -1,16 +1,16 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ToastsContainer} from "../../jira/pages/toasts-container.components";
 import {NgIf} from "@angular/common";
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
-import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {PostService} from "../../../app/services/blog/post.service";
+import {ModalService} from "../../../app/services/modal.service";
 
 @Component({
   selector: 'app-blog-modal',
   standalone: true,
   templateUrl: './blog-modal.component.html',
   imports: [ToastsContainer, NgIf],
-  providers: [NgbActiveModal, BsModalRef, BsModalService],
+  providers: [NgbActiveModal, ModalService],
   styleUrls: ['./blog-modal.component.scss']
 })
 export class BlogModalComponent implements OnInit{
@@ -22,12 +22,9 @@ export class BlogModalComponent implements OnInit{
   blogData: any;
 
 
-  //@Input() dataForm: FormGroup;
-
   constructor(
     public activeModal: NgbActiveModal,
-    private modalService: BsModalService,
-    public bsModalRef: BsModalRef,
+    private modalService: ModalService,
     private postService: PostService
   ) {
     //debugger;
