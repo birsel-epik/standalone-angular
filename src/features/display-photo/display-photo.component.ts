@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 import {PhotoService} from "../../app/services/photo.service";
+
 
 @Component({
   selector: 'app-display-photo',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   templateUrl: './display-photo.component.html',
   styleUrls: ['./display-photo.component.scss']
 })
@@ -25,7 +27,7 @@ export class DisplayPhotoComponent implements OnInit {
   {
     this.photoService.getPhotos().subscribe( response => {
       this.photoUrl = response.urls.regular;
-      //console.log(this.photoUrl)
+      console.log(this.photoUrl)
     })
   }
 

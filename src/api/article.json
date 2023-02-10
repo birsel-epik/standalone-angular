@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "username": "test",
+      "title": "test",
+      "content": "denesene",
+      "comments": [
+        {
+          "username": "alyada",
+          "comment": "test et"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "username": "deneme",
+      "title": "deneme",
+      "content": " dene sende ",
+      "comments": [
+        {
+          "username": "selin",
+          "comment": "test"
+        },
+        {
+          "username": "deneme",
+          "comment": "test"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "username": "sel",
+      "title": "selin",
+      "content": "sel sel sel",
+      "comments": [
+        {
+          "username": "dene",
+          "comment": "sende dene"
+        },
+        {
+          "username": "dene",
+          "comment": "sende denesene"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "username": "selin",
+      "title": "test",
+      "content": "deneme",
+      "comments": [],
+      "id": 4
+    },
+    {
+      "username": "birsele",
+      "title": "test",
+      "content": "test",
+      "comments": [
+        {
+          "username": "yorum başlığı",
+          "comment": "yorum içeriği"
+        }
+      ],
+      "id": 5
+    }
+  ]
+}

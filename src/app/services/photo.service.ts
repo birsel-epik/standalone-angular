@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
-interface CallResponse {
+interface CallResponse // Servisten gelen cevabın dönüş tipi
+{
   urls: {
-    regular : string;
+    regular: string;
   }
 }
 
@@ -12,13 +13,15 @@ interface CallResponse {
 })
 export class PhotoService {
   //baseUrl = 'https://api.unsplash.com/';
-  constructor( private httpClient:HttpClient ) { }
-    getPhotos() {
-      return this.httpClient.get<CallResponse>('https://api.unsplash.com/photos/random', {
-        headers: {
-          Authorization: 'Client-ID c_EgsZeplJUTgYKpIGnycRgy1-g2Nd1heepRNiv9U-k'
-        }
-      })
+  constructor(private httpClient: HttpClient) {
+  }
+
+  getPhotos() {
+    return this.httpClient.get<CallResponse>('https://api.unsplash.com/photos/random', {
+      headers: {
+        Authorization: 'Client-ID c_EgsZeplJUTgYKpIGnycRgy1-g2Nd1heepRNiv9U-k'
+      }
+    })
   }
 
 }

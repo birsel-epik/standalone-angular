@@ -9,6 +9,7 @@ import {CardComponent} from "../card/card.component";
 import {JiraLayoutComponent} from "../jira/jira-layout/jira-layout.component";
 import {BlogComponent} from "../blog/blog.component";
 import {ArrayMethodsComponent} from "../array-methods/array-methods.component";
+import {ArticleLayoutComponent} from "../article/article-layout/article-layout.component";
 
 export const landingRoutes: Routes = [
   {
@@ -22,6 +23,7 @@ export const landingRoutes: Routes = [
       {path: 'methods', component:ArrayMethodsComponent},
       {path: 'card', component:CardComponent},
       {path: 'jira', component:JiraLayoutComponent},
+      {path: 'article', component:ArticleLayoutComponent},
       {path: 'blog', component:BlogComponent}
     ]
   }

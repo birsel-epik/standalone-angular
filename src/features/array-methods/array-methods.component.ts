@@ -66,7 +66,6 @@ export class ArrayMethodsComponent {
   sonucReduce2: any[] = [];
 
 
-
   // Dizi içerisinde dizi oluşturma 1. Örnek
   piknikSepetim: any[] = [
     ['elma', 3],
@@ -322,7 +321,7 @@ export class ArrayMethodsComponent {
     //Çıktı oalrak [10,5,4,3,2] alırız.
 
 
-    //reduce Metod
+    //class="d-block mb-3" Metod
     const reduceSayilar = [10,20,30];
 
     // Dizi içerisindeki sayıları toplayarak indirgeyecek bir fonksiyon yazalım:

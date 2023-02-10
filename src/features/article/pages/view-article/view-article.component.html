@@ -1,0 +1,36 @@
+<div class="d-flex row justify-content-center">
+
+  <div class="card col-8 p-0">
+    <div class="card-header fw-bold">{{articlesData[articleIndex].username}}</div>
+    <div class="card-body">
+      <h6>{{articlesData[articleIndex].title}}</h6>
+      <div class="content">
+        {{articlesData[articleIndex].content}} <br><br>
+        {{articlesData[articleIndex].comment}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8 m-4">
+    <h4>Yorumlar</h4>
+    <span class="comment" *ngFor="let comment of this.articlesData[this.articleIndex].comments">
+      <span class="fw-bold">Username: </span><span class="username">{{comment.username}}</span> <br>
+      <span class="fw-bold">Comment: </span><span class="comment">{{comment.comment}}</span><br><br>
+    </span>
+  </div>
+
+
+  <div class="col-8 m-3">
+    <label for="username" class="form-label fw-bold">Kullanıcı Adı</label>
+    <input [(ngModel)]="username" type="text" class="form-control" id="username" placeholder="username">
+  </div>
+  <div class="col-8 mb-3">
+    <label for="username" class="form-label fw-bold">Yorum</label>
+    <textarea [(ngModel)]="comment" class="form-control" id="comment" rows="3"></textarea>
+  </div>
+
+  <div class="col-8">
+    <button (click)="addComment()" class="btn btn-primary">Yorum Yap</button>
+  </div>
+
+</div>

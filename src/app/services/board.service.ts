@@ -36,7 +36,7 @@ export class BoardService {
 
   public delete (boardNumber: number) { // boardNumber -> parametre adı değişken olabilir, parametre isimleri fark etmez. Ne gönderdiyseniz karşı tarafta o değer tutulur
     this.boards.splice(boardNumber,1); // 1 soluna bunları yapıştırıacak, yani diziden 1 eleman çıkartılacak
-    localStorage.setItem('boards', JSON.stringify((this.boards))); // Silindikten sonra değişikliğpi görmek için localStorage Update ediliyor
+    localStorage.setItem('boards', JSON.stringify((this.boards))); // Silindikten sonra değişikliği görmek için localStorage Update ediliyor
   }
 
 

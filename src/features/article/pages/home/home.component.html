@@ -1,0 +1,19 @@
+<div class="container" class="d-flex row justify-content-center">
+
+  <div class="col-6 mb-3">
+    <button routerLink="/article/create" class="btn btn-warning">Yeni Yazı Oluştur</button>
+  </div>
+
+  <div class="d-flex row justify-content-center">
+
+    <div [routerLink]="'/article/view/'+i" class="card col-5 m-3 p-0" *ngFor="let article of articlesData; let i=index">
+      <!-- index e göre Yönlendirme  işlemi için routerLink kullanıyoruz. view/2 gibi -->
+      <div class="card-header fw-bold">{{article.username}}</div>
+      <div class="card-body">
+        <h6>{{article.title}}</h6>
+        <div class="content">{{article.content}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

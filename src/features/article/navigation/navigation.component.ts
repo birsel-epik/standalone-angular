@@ -3,17 +3,12 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'app-nav',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
-
-  collapseMenu = true;
-  collapseSubMenu() {
-    this.collapseMenu = !this.collapseMenu;
-  }
+export class NavComponent {
 
 }
