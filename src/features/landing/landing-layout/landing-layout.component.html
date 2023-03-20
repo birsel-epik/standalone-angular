@@ -1,11 +1,16 @@
-<div class="p-3 bg-light">
-  <button type="button" class="navbar-toggle" (click)="toggleNavbarCollapsing()">
-    <i class="bi bi-list"></i>
-  </button>
+<div class="d-flex justify-content-between" style="background-color: #f8f9fa;">
+  <div class="p-3 bg-light">
+    <button type="button" class="navbar-toggle" (click)="toggleNavbarCollapsing()">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+  <div>
+    <img src="assets/images/be-logo.png" alt="Birsel Epik" width="50" height="50">
+  </div>
 </div>
 
-<div class="d-flex w-100 h-100">
 
+<div class="d-flex w-100 h-100">
     <div class="d-flex col w-100">
       <div class="col-md-2 p-4 bg-light border" [class.collapse]="navbarCollapsed">
         <app-navigation></app-navigation>
@@ -14,7 +19,6 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-
 </div>
 
 

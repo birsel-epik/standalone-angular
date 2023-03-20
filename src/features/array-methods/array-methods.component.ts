@@ -125,8 +125,7 @@ export class ArrayMethodsComponent {
     console.log(elmaVar);
     //Dizi içerisinde elma olduğu için true yazdırmasını bekleriz.
 
-    const armutVar
-      = includesMethod.includes("armut");
+    const armutVar = includesMethod.includes("armut");
     this.armutVar = armutVar;
     console.log(armutVar);
     //Dizi içerisinde armut olmadığı için false yazdırmasını bekleriz.
@@ -156,6 +155,7 @@ export class ArrayMethodsComponent {
     const stringAlisverisListem2 = joinMethod.join(' ye, ');
     console.log(stringAlisverisListem2);
     this.stringAlisverisListem2 = stringAlisverisListem2;
+    //Çıktıda "elma ye, ekmek ye, süt ye," bekeleriz.
 
 
 

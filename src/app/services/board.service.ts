@@ -17,7 +17,7 @@ export class BoardService {
     }
   }
 
-  public create(title: any) { //metoda ulaşmak için Public yapıyoruz (Private bulunduğu yerde çalşır)
+  public create(title: any) { //metoda ulaşmak için Public yapıyoruz (Private bulunduğu yerde çalışır)
     let newBoardObj = {
       title: title,
       cards: []
@@ -27,7 +27,7 @@ export class BoardService {
     this.boards.push(newBoardObj); // Yeni newBoardObj i boards arrayının içine göndermiş oluyoruz
     localStorage.setItem('boards', JSON.stringify(this.boards));
     // LocalStorage veriyi kaydetmiş oluyoruz
-    // localStorage kaydededebilmek için JSON.stringify haline çevirmemiz gerekiyor
+    // localStorage a kaydededebilmek için JSON.stringify haline çevirmemiz gerekiyor
   }
 
   public update() {
@@ -35,7 +35,7 @@ export class BoardService {
   }
 
   public delete (boardNumber: number) { // boardNumber -> parametre adı değişken olabilir, parametre isimleri fark etmez. Ne gönderdiyseniz karşı tarafta o değer tutulur
-    this.boards.splice(boardNumber,1); // 1 soluna bunları yapıştırıacak, yani diziden 1 eleman çıkartılacak
+    this.boards.splice(boardNumber,1); // 1 soluna bunları yapıştıracak, yani diziden 1 eleman çıkartılacak
     localStorage.setItem('boards', JSON.stringify((this.boards))); // Silindikten sonra değişikliği görmek için localStorage Update ediliyor
   }
 

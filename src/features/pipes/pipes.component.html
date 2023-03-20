@@ -1,0 +1,86 @@
+<div class="d-flex vstack container justify-content-center align-items-left p-4">
+
+  <div>
+    <h3>Invoice</h3>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Name: </label>
+        <input type="text" class="form-control" (change)="onNameChange($any($event.target).value)">
+        <!-- input değeri göndereceğimiz için $event.target.value yazıyoruz -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="fw-bold">Name: </label>
+      <div>{{name | titlecase}}</div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Payment Date: </label>
+        <input type="date" class="form-control" (change)="onDateChange($any($event.target).value)">
+        <!-- input değeri göndereceğimiz için $event.target.value yazıyoruz -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="fw-bold">Payment Date: </label>
+      <div>{{date | date:'MMMM d, y'}}</div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Amount: </label>
+        <input type="text" class="form-control" (change)="onMoneyChange($any($event.target).value)">
+        <!-- input değeri göndereceğimiz için $event.target.value yazıyoruz -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="fw-bold">Amount: </label>
+      <div>{{money | currency : 'TRY'}}</div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Size: </label>
+        <input type="text" class="form-control" (change)="onHeightChange($any($event.target).value)">
+        <!-- input değeri göndereceğimiz için $event.target.value yazıyoruz -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="fw-bold">Size: </label>
+      <div>{{height | number : '1.1-4'}}</div>
+      <!-- başlangıçtan (soldan) 1 değer alıp, nokta (.) dan sonra sağdan 4 değer alsın -->
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Mil: </label>
+        <input type="text" class="form-control" (change)="onMilesChange($any($event.target).value)">
+        <!-- input değeri göndereceğimiz için $event.target.value yazıyoruz -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="fw-bold">Kilometer: </label>
+      <div>{{miles | convert : 'cm'}}</div>
+      <!-- başlangıçtan (soldan) 1 değer alıp, nokta (.) dan sonra sağdan 4 değer alsın -->
+    </div>
+  </div>
+
+
+  {{ lessons | json}}
+
+</div>
+
+
+
+
