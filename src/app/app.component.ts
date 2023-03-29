@@ -10,5 +10,5 @@ import {ErrorComponent} from "../features/common/pages/error/error.component";
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'angular15';
+  title = "angular15";
 }

@@ -11,6 +11,7 @@ import {BlogComponent} from "../blog/blog.component";
 import {ArrayMethodsComponent} from "../array-methods/array-methods.component";
 import {ArticleLayoutComponent} from "../article/article-layout/article-layout.component";
 import {PipesComponent} from "../pipes/pipes.component";
+import {StudentLayoutComponent} from "../student/student-layout/student-layout.component";
 
 export const landingRoutes: Routes = [
   {
@@ -26,7 +27,8 @@ export const landingRoutes: Routes = [
       {path: 'card', component:CardComponent},
       {path: 'jira', component:JiraLayoutComponent},
       {path: 'article', component:ArticleLayoutComponent},
-      {path: 'blog', component:BlogComponent}
+      {path: 'blog', component:BlogComponent},
+      {path: 'student', component:StudentLayoutComponent}
     ]
   }
 ]
