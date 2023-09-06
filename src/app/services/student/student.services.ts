@@ -6,7 +6,7 @@ import {CrudService} from "./crud.services";
   providedIn: "root",
 })
 export class StudentServices extends CrudService<StudentModel> {
-  override baseUrl = "Student";
+  override baseUrl = "MyPoint";
 
   constructor() {
     super();

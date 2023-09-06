@@ -1,16 +1,59 @@
-import {AddressModel} from "./address";
-import {GenderModel} from "./gender";
+import {ForeignName} from "./common";
+import {BaseModel} from "./base-model";
 
-export interface StudentModel {
-  id?: string;
-  firstName?: string;
-  lastName?: string;
-  dateOfBirth?: string;
+export interface StudentModel extends ForeignName, BaseModel {
+  phone?: string;
+  phone2?: string;
+
+  phone3?: string;
+
+  gender?: boolean;
+  nationality?: string;
+
+  taxNumber?: string;
+
+  isBlackList?: boolean;
   email?: string;
-  mobile?: number;
-  profileImageUrl?: string;
-  genderId?: string;
 
-  gender?: GenderModel[];
-  address?: AddressModel[];
+  password?: string;
+
+  birthDay?: string;
+
+  description?: string;
+
+  isSync?: boolean /* ? */;
+
+  customerAddresses?: StudentAddressModel[];
+  customerPoints?: StudentPointModel[];
+}
+
+export interface StudentAddressModel extends BaseModel {
+  customerId?: number;
+  zone?: string;
+
+  floor?: string;
+
+  apartment?: string;
+
+  buildingNumber?: string;
+
+  streetNumber?: string;
+
+  description?: string;
+
+  longitude?: string;
+
+  latitude?: string;
+}
+
+
+export interface StudentPointModel extends BaseModel {
+  customerId?: number;
+  orderId?: number;
+  orderDate?: string;
+  expireDate?: string;
+  expireDayNum?: number;
+  pointsPerOrder?: number;
+  expired?: boolean;
+  redeemed?: boolean;
 }

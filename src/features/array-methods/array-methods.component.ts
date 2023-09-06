@@ -94,6 +94,16 @@ export class ArrayMethodsComponent {
   ucuncuSayi: any;
 
 
+  test  = `p { color: red; }
+
+
+
+
+
+
+code { background-color: #eee; }`
+
+
 
   constructor() {
     //push Method
@@ -318,7 +328,7 @@ export class ArrayMethodsComponent {
 
     this.sortSayilar2 = sortSayilar2;
     console.log(sortSayilar2);
-    //Çıktı oalrak [10,5,4,3,2] alırız.
+    //Çıktı olarak [10,5,4,3,2] alırız.
 
 
     //class="d-block mb-3" Metod
@@ -410,6 +420,7 @@ export class ArrayMethodsComponent {
     const sonucOrnek3 = ilkSayi * ikinciSayi * ucuncuSayi;
     this.sonucOrnek3 = sonucOrnek3;
     console.log(sonucOrnek3);
+
 
 
 

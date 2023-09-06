@@ -128,7 +128,7 @@
 
 
   <hr>
-  <div class="d-inline-block mb-6">
+  <div class="d-inline-block mb-3">
     <h6 class="fw-bold">.find()</h6>
     <ul>
       <li>Bu metot belirtilen koşula uyum sağlayan dizi elemanını bulmamızı sağlar.</li>
@@ -145,11 +145,11 @@
       <li>Bu metot, dizi içerisindeki elemanları sıralamaya yarar.</li>
       <li>Orijinal dizi sıralanmış şekilde döner. (Yani dizi mutate eder.)</li>
       <li>Eğer parametre olarak bir fonksiyon verilmezse dizi elemanları string'e çevirilir ve UTF-16 değerlerine göre sıralanır.</li>
-      <li>Atan veya azalan olarak sıralamak için farklı bir yol izlenmelidir.</li>
+      <li>Artan veya azalan olarak sıralamak için farklı bir yol izlenmelidir.</li>
     </ul>
-    <span class="fst-italic">Varsayılan haliyle (parametre vermeden) sıralamak yapmak istediğimizde <br>
+    <span class="fst-italic">Varsayılan haliyle (parametre vermeden) sıralama yapmak istediğimizde <br>
       Sonuç 1: {{sortSayilar1}} (Sayıların string halleri UTF-16 değerlerine göre sıralandıkları için)<br>
-      Sonuç 2 : {{sortSayilar2}}
+      Sonuç 2 : {{sortSayilar2}} (Büyükten -> küçüğe sıralanır)
     </span>
   </div>
 
@@ -212,6 +212,14 @@
     <span class="fst-italic">
       Dizinin elemanlarının çarpımının sonucunu: {{sonucOrnek3}}
     </span>
+  </div>
+
+  <hr>
+  <div class="d-block mb-3">
+   <h6 class="fw-bold">Arrow Functions</h6>
+    hem ES5'i hem de ES6'yı kullanarak okuyacak bir şeyler bulmak için bir kitap koleksiyonunu filtreleyelim
+  <pre>{{test}}</pre>
+
   </div>
 
 

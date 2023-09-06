@@ -1,0 +1,131 @@
+<ng-container *transloco="let t">
+  <div class="p-4 vstack gap-4">
+    <!-- Table Toolbar -->
+    <div
+      class="border px-3 py-2 shadow-sm rounded-4 bg-body d-flex justify-content-between align-items-center"
+      *ngIf="toolbars.length > 0">
+      <h5 class="mb-0" *ngIf="pageTitle">{{ pageTitle }}</h5>
+      <ng-content select="app-dashboard-toolbar"></ng-content>
+    </div>
+
+    <ng-container *ngIf="dataSource && dataSource.data && dataSource.data.length > 0; else noRecordTemplate">
+      <div *ngIf="view !== 'grid'" class="border shadow-sm rounded-4 pt-3 bg-body">
+        <ng-container *ngIf="paginatedData">
+          <table class="table table-hover dashboard-table">
+            <thead *ngIf="view === 'table'">
+              <tr>
+                <th
+                  *ngIf="enableSelection"
+                  style="vertical-align: middle; z-index: 10; box-shadow: inset 0 -1px 0 var(--bs-border-color)"
+                  class="position-sticky top-0 bg-body"
+                  scope="col">
+                  <input
+                    class="form-check-input p-1"
+                    type="checkbox"
+                    (change)="selectAllClick($event)"
+                    [indeterminate]="selectionDeterminate === 'indeterminate'"
+                    [checked]="selectionDeterminate === 'all' ? true : null" />
+                </th>
+                <ng-container *ngFor="let col of columns">
+                  <th
+                    *ngIf="col.visible"
+                    style="vertical-align: middle; z-index: 10; box-shadow: inset 0 -1px 0 var(--bs-border-color)"
+                    class="position-sticky top-0 bg-body"
+                    scope="col">
+                    <span (click)="onSort(col)" style="cursor: pointer">
+                      {{ col.label }}
+                      <ng-container
+                        [ngTemplateOutlet]="sortIcon"
+                        [ngTemplateOutletContext]="{ $implicit: col.sortDirection }"></ng-container>
+                    </span>
+                  </th>
+                </ng-container>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of paginatedData">
+                <td *ngIf="enableSelection" style="width: 25px; vertical-align: middle">
+                  <input
+                    class="form-check-input p-1"
+                    type="checkbox"
+                    (change)="selectClick($event, item)"
+                    [checked]="item.selected" />
+                </td>
+                <ng-container *ngFor="let col of columns">
+                  <td
+                    *ngIf="(col.visible && view === 'table') || (col.visible && col.showOnList)"
+                    style="vertical-align: middle"
+                    (click)="itemDataClicked(col, item)"
+                    (dblclick)="itemDoubleClicked(col, item)">
+                    <ng-container
+                      [ngTemplateOutlet]="col.template"
+                      [ngTemplateOutletContext]="{
+                        $implicit: item,
+                        index: dataSource.data.indexOf(item)
+                      }"></ng-container>
+                  </td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+
+      <!-- Grid Layout -->
+      <div
+        class="table-grid-container"
+        [ngStyle]="{ gridTemplateColumns: gridTemplateColumns }"
+        *ngIf="view === 'grid' && paginatedData && gridItemTemplate">
+        <ng-container
+          *ngFor="let item of paginatedData"
+          [ngTemplateOutlet]="gridItemTemplate.template"
+          [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+      </div>
+
+      <!-- Footer -->
+      <div
+        class="position-sticky bg-body d-flex justify-content-between align-items-center px-3 py-2 border shadow rounded-4"
+        style="bottom: 10px">
+        <div>
+          <span ngbDropdown>
+            <button class="btn btn-sm btn-outline-secondary" ngbDropdownToggle>
+              {{ pageSize === 0 ? "All" : pageSize }} <i class="bi bi-caret-down-fill"></i>
+            </button>
+
+            <div ngbDropdownMenu>
+              <button ngbDropdownItem *ngFor="let ps of pageSizeList" (click)="pageSizeChanged(ps)">
+                {{ ps === 0 ? "All" : ps }}
+              </button>
+            </div>
+          </span>
+          {{ t("items per page.") }} {{ t("Total \{\{value\}\} items.", { value: dataSource.collectionSize }) }}
+        </div>
+
+        <ngb-pagination
+          [page]="page"
+          (pageChange)="pageChanged($event)"
+          [pageSize]="pageSize"
+          [boundaryLinks]="false"
+          [maxSize]="5"
+          [rotate]="true"
+          [ellipses]="true"
+          size="sm"
+          [collectionSize]="
+            dataType === 'client' ? filteredData.length : dataSource ? dataSource.collectionSize : 0
+          "></ngb-pagination>
+      </div>
+    </ng-container>
+  </div>
+
+  <ng-template #defaultColumnHeader let-col>{{ col }}</ng-template>
+
+  <ng-template #sortIcon let-dir>
+    <i class="bi" [ngClass]="dir === 'asc' ? 'bi-sort-up' : dir === 'desc' ? 'bi-sort-down' : ''"></i>
+  </ng-template>
+
+  <ng-template #noRecordTemplate>
+    <div class="border shadow-sm rounded-4 p-3 fs-5 bg-body">
+      <i class="bi bi-exclamation-triangle me-3"></i> {{ t("No records found") }}
+    </div>
+  </ng-template>
+</ng-container>

@@ -12,6 +12,7 @@ import {ArrayMethodsComponent} from "../array-methods/array-methods.component";
 import {ArticleLayoutComponent} from "../article/article-layout/article-layout.component";
 import {PipesComponent} from "../pipes/pipes.component";
 import {StudentLayoutComponent} from "../student/student-layout/student-layout.component";
+import {JavaScriptComponent} from "../java-script/java-script.component";
 
 export const landingRoutes: Routes = [
   {
@@ -20,15 +21,16 @@ export const landingRoutes: Routes = [
       {path: '', pathMatch: 'full', component: HomeComponent}, // url ile tam eşleşme için pathMatch kullanılır
       {path: 'about', component: AboutComponent},
       {path: 'contact', component: ContactComponent},
-      {path: 'display-photo', component:DisplayPhotoComponent},
-      {path: 'equality', component:EqualityComponent},
-      {path: 'methods', component:ArrayMethodsComponent},
-      {path: 'pipes', component:PipesComponent},
-      {path: 'card', component:CardComponent},
-      {path: 'jira', component:JiraLayoutComponent},
-      {path: 'article', component:ArticleLayoutComponent},
-      {path: 'blog', component:BlogComponent},
-      {path: 'student', component:StudentLayoutComponent}
+      {path: 'display-photo', component: DisplayPhotoComponent},
+      {path: 'equality', component: EqualityComponent},
+      {path: 'methods', component: ArrayMethodsComponent},
+      {path: 'javascript', component: JavaScriptComponent},
+      {path: 'pipes', component: PipesComponent},
+      {path: 'card', component: CardComponent},
+      {path: 'jira', component: JiraLayoutComponent},
+      {path: 'article', component: ArticleLayoutComponent},
+      {path: 'blog', component: BlogComponent},
+      {path: 'student', component: StudentLayoutComponent}
     ]
   }
 ]

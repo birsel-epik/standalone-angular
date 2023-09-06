@@ -8,8 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
+    "format": "prettier --write src --loglevel warn",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "i18n:extract": "transloco-keys-manager extract --input app,features --langs en tr ar",
+    "i18n:find": "transloco-keys-manager find --input app,features --langs en tr ar",
+    "lint": "ng lint --quiet"
   },
   "private": true,
   "dependencies": {
@@ -36,7 +40,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.2",
-    "@angular/cli": "^15.0.3",
+    "@angular/cli": "^15.1.6",
     "@angular/compiler-cli": "^15.0.0",
     "@angular/localize": "^15.0.0",
     "@cypress/schematic": "^2.3.0",

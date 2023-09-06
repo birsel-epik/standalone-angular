@@ -1,0 +1,10 @@
+{
+  "Total {{value}} items.": "Toplam {{value}} öğe.",
+  "Change Language": "Dili Değiştir",
+  "English (USA)": "İngilizce (ABD)",
+  "Turkish": "Türkçe",
+  "Make your selection": "Seçim yapınız",
+  "Name": "İsim",
+  "deleteConfirm": "\"{{param}}\" öğesini silmek istediğine emin misin?",
+  "tableWithNumber": "Masa {{param}}"
+}

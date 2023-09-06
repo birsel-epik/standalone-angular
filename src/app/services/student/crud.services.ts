@@ -1,9 +1,8 @@
-import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {mapData} from "../../../utils/object-helper";
 import {inject} from "@angular/core";
 import {of} from "rxjs";
-
+import {mapData} from "../../../utils/object-helper";
+import {environment} from "../../../environments/environment";
 
 export interface CrudResponse {
   message?: string;
@@ -20,8 +19,7 @@ export class CrudService<T> {
   public baseUrl: string = "";
 
   list<T>() {
-    return this.httpClient.get<T[]>(`${this.apiUrl}/${this.baseUrl}/Students`).pipe(mapData());
-    //return this.httpClient.get<T[]>(`${this.apiUrl}/${this.baseUrl}/GetAllAsync`).pipe(mapData());
+    return this.httpClient.get<T[]>(`${this.apiUrl}/${this.baseUrl}/GetAllAsync`).pipe(mapData());
   }
 
   one<T>(id: number) {
